@@ -14,6 +14,8 @@ import java.util.logging.Logger;
 
 public class FunCommands extends Plugin {
 
+    public static String channel = "FunCommands";
+    public static String subChannel = "Dispatcher";
     public static ProxyServer proxy;
     public static Logger logger;
     public static File pluginFolder;
@@ -36,6 +38,8 @@ public class FunCommands extends Plugin {
         getProxy().getPluginManager().registerCommand(this, new Shrug());
         getProxy().getPluginManager().registerCommand(this, new Version());
 
+        proxy.registerChannel(channel);
+
         DerpHandler.loadDerps();
 
         try {
@@ -56,4 +60,5 @@ public class FunCommands extends Plugin {
         }
         throw new Exception("NoPlayerFound");
     }
+
 }
