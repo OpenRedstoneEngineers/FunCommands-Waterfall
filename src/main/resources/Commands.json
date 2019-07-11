@@ -1,0 +1,162 @@
+[
+  {
+    "Command": "love",
+    "Function": "<colour-d><name> <colour-c><colour-l><3 <colour-d><arg-all>",
+    "Description": "D'awww"
+  },
+  {
+    "Command": "baa",
+    "Function": "<colour-e><name><colour-f> Baas like a sheep",
+    "Description": "Baa like a sheep"
+  },
+  {
+    "Command": "huzza",
+    "Function": "<colour-6><name><colour-5> yells HUZZA <run>suicide",
+    "Description": "HUZZZAH"
+  },
+  {
+    "Command": "nope",
+    "Function": "<self>Chuck testa",
+    "Description": "Nope.avi"
+  },
+  {
+    "Command": "forgive",
+    "Function": "<colour-6><name><colour-5> forgives <colour-6><arg-all>",
+    "Description": "I'm sorry"
+  },
+  {
+    "Command": "lol",
+    "Function": "<colour-e><name><colour-6> lol'd",
+    "Description": "haha"
+  },
+  {
+    "Command": "moo",
+    "Function": "<colour-e><name><colour-f> Moos like a cow",
+    "Description": "Moo like a cow"
+  },
+  {
+    "Command": "lemur",
+    "Function": "<colour-e><name><colour-f> Barks and screeches like a lemur",
+    "Description": "Bark like a lemur"
+  },
+  {
+    "Command": "snuggle",
+    "Function": "<colour-d><name> <colour-4><colour-l>snuggled with <colour-d><arg-all>",
+    "Description": "for someone you love"
+  },
+  {
+    "Command": "brains",
+    "Function": "<colour-e><name><colour-f> Brains like a zombie",
+    "Description": "Brraaiinnss"
+  },
+  {
+    "Command": "sss",
+    "Function": "<colour-e><name><colour-f> Sses like a creeper",
+    "Description": "Sss like a creeper"
+  },
+  {
+    "Command": "confuse",
+    "Function": "<colour-e><name><colour-f> has ALL the confusion",
+    "Description": "errrrrm"
+  },
+  {
+    "Command": "waffle",
+    "Function": "<colour-e>Guess who likes waffles. <name> does!",
+    "Description": "tasty..."
+  },
+  {
+    "Command": "bark",
+    "Function": "<colour-e><name><colour-f> Barks like a dog",
+    "Description": "Bark like a dog"
+  },
+  {
+    "Command": "hap",
+    "Function": "<colour-d><name> <colour-5>haphaphap'd",
+    "Description": "haphap"
+  },
+  {
+    "Command": "hate",
+    "Function": "<colour-a><name> <colour-2><colour-l>hates <colour-a><arg-all>",
+    "Description": "-"
+  },
+  {
+    "Command": "massage",
+    "Function": "<colour-d><name> <colour-4>massaged <colour-d><arg-0>'s <arg-1>",
+    "Description": "mmmm..."
+  },
+  {
+    "Command": "mistake",
+    "Function": "<colour-4>Ohder <colour-6><colour-l><name> <colour-5>made a mistake",
+    "Description": "odder"
+  },
+  {
+    "Command": "art",
+    "Function": "<colour-a>Green is <colour-2><colour-l>NOT <colour-a>a creative colour, <name>...",
+    "Description": "Dat colour"
+  },
+  {
+    "Command": "c",
+    "Function": "<self>Formatting: <colour-l>l<colour-r> <colour-m>m<colour-r> <colour-n>n<colour-r> <colour-o>o<colour-r>\nColor: <colour-1>1 <colour-2>2 <colour-3>3 <colour-4>4 <colour-5>5 <colour-6>6 <colour-7>7 <colour-8>8 <colour-9>9 <colour-0>0 <colour-a>a <colour-b>b <colour-c>c <colour-d>d <colour-e>e <colour-f>f",
+    "Description": "View format codes"
+  },
+  {
+    "Command": "oink",
+    "Function": "<colour-e><name><colour-f> Oinks like a pig",
+    "Description": "Oink like a pig"
+  },
+  {
+    "Command": "suicide",
+    "Function": "<name>: Good bye Cruel World! <run>kill <name>",
+    "Description": "Suicide.."
+  },
+  {
+    "Command": "facepalm",
+    "Function": "<colour-3><name> <colour-9>facepalms",
+    "Description": "..No"
+  },
+  {
+    "Command": "cp",
+    "Function": "<self>OMG, lagggg",
+    "Description": "Such lag"
+  },
+  {
+    "Command": "cluck",
+    "Function": "<colour-e><name><colour-f> Clucks like a chicken",
+    "Description": "Cluck like a chicken"
+  },
+  {
+    "Command": "rage",
+    "Function": "<colour-c><colour-l><name> <colour-c><colour-l>rages",
+    "Description": "grrrr"
+  },
+  {
+    "Command": "hug",
+    "Function": "<colour-d><name> <colour-4><colour-l>hugged <colour-d><arg-all>",
+    "Description": "for someone you love"
+  },
+  {
+    "Command": "join",
+    "Function": "<colour-e><arg-all> joined the game",
+    "Description": "Fake someone joining the game"
+  },
+  {
+    "Command": "leave",
+    "Function": "<colour-e><arg-all> left the game",
+    "Description": "Fake someone joining the game"
+  },
+  {
+    "Command": "join-rename",
+    "Function": "<colour-e><arg-0> (formerly known as <arg-1>) joined the game",
+    "Description": "Fake someone joining the game as a diffrent name"
+  },
+  {
+    "Command": "keol",
+    "Function": "<colour-e><name><colour-6> KEOLkeolKEOL'd",
+    "Description": "keol"
+  },
+  {
+    "Command": "rip",
+    "Function": "<colour-c><colour-l>RIP <name>!",
+    "Description": "rip"
+  }
+]
