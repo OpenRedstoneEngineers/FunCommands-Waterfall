@@ -110,11 +110,7 @@ public class GenericCommand extends Command {
 
         function = function.replace("<name>", commandSender.getName());
 
-        String argall = "";
-
-        for(String y : strings){
-            argall = argall + " " + y;
-        }
+        String argall = String.join(" ", strings);
 
         for(int r = 0;r < strings.length;r = r + 1){
 
