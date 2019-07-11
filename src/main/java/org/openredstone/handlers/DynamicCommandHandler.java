@@ -1,11 +1,11 @@
-package org.stonecipher.handlers;
+package org.openredstone.handlers;
 
 import net.md_5.bungee.api.plugin.Plugin;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
-import org.stonecipher.FunCommands;
-import org.stonecipher.commands.GenericCommand;
+import org.openredstone.FunCommands;
+import org.openredstone.commands.GenericCommand;
 
 import java.io.File;
 import java.io.FileNotFoundException;

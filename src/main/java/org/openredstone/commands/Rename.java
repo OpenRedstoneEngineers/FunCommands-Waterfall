@@ -1,13 +1,12 @@
-package org.stonecipher.commands;
+package org.openredstone.commands;
 
 import net.md_5.bungee.api.CommandSender;
 import net.md_5.bungee.api.chat.TextComponent;
 import net.md_5.bungee.api.plugin.Command;
-import org.stonecipher.FunCommands;
 
-public class Version extends Command {
-    public Version() {
-        super("version");
+public class Rename extends Command {
+    public Rename() {
+        super("rename");
     }
     @Override
     public void execute(CommandSender commandSender, String[] strings) {
@@ -15,6 +14,5 @@ public class Version extends Command {
             commandSender.sendMessage(new TextComponent("You do not have permission to run this command!"));
             return;
         }
-        commandSender.sendMessage(new TextComponent("FunCommands version: " + FunCommands.pluginDescription.getVersion()));
     }
 }

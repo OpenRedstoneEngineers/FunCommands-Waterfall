@@ -1,12 +1,12 @@
-package org.stonecipher.commands;
+package org.openredstone.commands;
 
 import net.md_5.bungee.api.CommandSender;
 import net.md_5.bungee.api.chat.TextComponent;
 import net.md_5.bungee.api.plugin.Command;
 import net.md_5.bungee.api.plugin.Plugin;
-import org.stonecipher.FunCommands;
-import org.stonecipher.handlers.DerpHandler;
-import org.stonecipher.handlers.DynamicCommandHandler;
+import org.openredstone.FunCommands;
+import org.openredstone.handlers.DerpHandler;
+import org.openredstone.handlers.DynamicCommandHandler;
 
 import java.io.IOException;
 

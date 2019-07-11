@@ -1,10 +1,10 @@
-package org.stonecipher.handlers;
+package org.openredstone.handlers;
 
 import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.CommandSender;
 import net.md_5.bungee.api.chat.TextComponent;
-import org.stonecipher.FunCommands;
-import org.stonecipher.utils.FileArrayProvider;
+import org.openredstone.FunCommands;
+import org.openredstone.utils.FileArrayProvider;
 
 import java.io.File;
 import java.io.IOException;

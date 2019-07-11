@@ -1,9 +1,9 @@
-package org.stonecipher.commands;
+package org.openredstone.commands;
 
 import net.md_5.bungee.api.CommandSender;
 import net.md_5.bungee.api.chat.TextComponent;
 import net.md_5.bungee.api.plugin.Command;
-import org.stonecipher.handlers.DerpHandler;
+import org.openredstone.handlers.DerpHandler;
 
 public class Derp extends Command {
     public Derp() {

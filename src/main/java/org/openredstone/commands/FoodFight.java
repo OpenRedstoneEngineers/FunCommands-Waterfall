@@ -1,13 +1,12 @@
-package org.stonecipher.commands;
+package org.openredstone.commands;
 
 import net.md_5.bungee.api.CommandSender;
 import net.md_5.bungee.api.chat.TextComponent;
 import net.md_5.bungee.api.plugin.Command;
-import org.stonecipher.handlers.DerpHandler;
 
-public class Derps extends Command {
-    public Derps() {
-        super("derps");
+public class FoodFight extends Command {
+    public FoodFight() {
+        super("foodfight");
     }
     @Override
     public void execute(CommandSender commandSender, String[] strings) {
@@ -15,6 +14,5 @@ public class Derps extends Command {
             commandSender.sendMessage(new TextComponent("You do not have permission to run this command!"));
             return;
         }
-        DerpHandler.getDerpList(commandSender);
     }
 }
