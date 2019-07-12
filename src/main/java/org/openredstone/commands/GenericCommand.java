@@ -3,6 +3,7 @@ package org.openredstone.commands;
 import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.CommandSender;
 import net.md_5.bungee.api.chat.TextComponent;
+import net.md_5.bungee.api.connection.ProxiedPlayer;
 import net.md_5.bungee.api.plugin.Command;
 import org.openredstone.FunCommands;
 
@@ -43,16 +44,16 @@ public class GenericCommand extends Command {
 
         try {
             if (globalMessage != null) {
-                FunCommands.proxy.broadcast(formatMessage(globalMessage, args, sender.getName()));
+                FunCommands.proxy.broadcast(formatMessage(globalMessage, args, sender));
             }
 
             if (localMessage != null) {
-                sender.sendMessage(formatMessage(localMessage, args, sender.getName()));
+                sender.sendMessage(formatMessage(localMessage, args, sender));
             }
 
             if (toRun != null) {
                 // TODO
-                sender.sendMessage(formatMessage(toRun, args, sender.getName()));
+                sender.sendMessage(formatMessage(toRun, args, sender));
             }
         } catch (IllegalArgumentException e) {
             // TODO: handle args properly
@@ -62,9 +63,17 @@ public class GenericCommand extends Command {
         }
     }
 
-    private static TextComponent formatMessage(String text, String[] args, String name) throws IllegalArgumentException {
+    private TextComponent formatMessage(String text, String[] args, CommandSender sender) throws IllegalArgumentException {
+
+        if (sender instanceof  ProxiedPlayer) {
+            text = text
+                    .replace("<uuid>", ((ProxiedPlayer) sender).getUniqueId().toString());
+        } else if (toRun != null) {
+            throw new IllegalArgumentException();
+        }
+
         text = text
-                .replace("<name>", name)
+                .replace("<name>", sender.getName())
                 .replace("<arg-all>", String.join(" ", args));
         text = formatArgs(text, args);
         text = ChatColor.translateAlternateColorCodes('&', text);
