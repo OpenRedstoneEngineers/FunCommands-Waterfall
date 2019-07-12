@@ -9,7 +9,6 @@ import org.openredstone.handlers.DerpHandler;
 import org.openredstone.handlers.DynamicCommandHandler;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.logging.Logger;
 
 public class FunCommands extends Plugin {

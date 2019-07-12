@@ -23,9 +23,8 @@ public class Message {
 
     public Message(String serializedMessage) throws Exception {
         String[] raw = serializedMessage.split(":");
-        //List<String> raw = Arrays.asList(serializedMessage.split(":"));
 
-        if (raw.length < 2) {
+        if (raw.length<2) {
             throw new Exception("Not enough arguments provided in serialized message.");
         }
 
