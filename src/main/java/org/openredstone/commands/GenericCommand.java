@@ -73,7 +73,7 @@ public class GenericCommand extends Command {
 
     private static String formatArgs(String text, String[] args) throws IllegalArgumentException {
         for (int i = 0; i <  10; ++i) {
-            String placeholder = "\\$" + i;
+            String placeholder = "$" + i;
             if (!text.contains(placeholder)) {
                 // no checking for too many arguments currently
                 break;
@@ -82,7 +82,7 @@ public class GenericCommand extends Command {
                 // TODO
                 throw new IllegalArgumentException("not enough arguments");
             }
-            text = text.replaceAll(placeholder, args[i]);
+            text = text.replace(placeholder, args[i]);
         }
         return text;
     }
