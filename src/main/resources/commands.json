@@ -148,7 +148,7 @@
   },
   {
     "command": "join-rename",
-    "description": "Fake someone joining the game as a diffrent name",
+    "description": "Fake someone joining the game as a different name",
     "globalChat": "&e$0 (formerly known as $1) joined the game"
   },
   {
