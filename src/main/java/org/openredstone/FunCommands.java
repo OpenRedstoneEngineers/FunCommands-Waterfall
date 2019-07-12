@@ -14,8 +14,8 @@ import java.util.logging.Logger;
 
 public class FunCommands extends Plugin {
 
-    public static String channel = "FunCommands";
-    public static String subChannel = "Dispatcher";
+    public static String channel = "fun:commands";
+    public static String subChannel = "dispatcher";
     public static ProxyServer proxy;
     public static Logger logger;
     public static File pluginFolder;
