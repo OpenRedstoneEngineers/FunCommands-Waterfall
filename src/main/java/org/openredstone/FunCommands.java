@@ -40,16 +40,16 @@ public class FunCommands extends Plugin {
 
         proxy.registerChannel(channel);
 
+        // also TODO: get load/unload/reload functionality into one place
         DerpHandler.loadDerps();
 
         try {
             DynamicCommandHandler.readCommands();
-        } catch (IOException e) {
-            logger.severe("Unable to read commands something is not right");
+            DynamicCommandHandler.registerCommands(this);
+        } catch (Exception e) {
+            // TODO
+            e.printStackTrace();
         }
-
-        DynamicCommandHandler.registerCommands(this);
-
     }
 
     public static ProxiedPlayer getPlayer(String name) throws Exception {

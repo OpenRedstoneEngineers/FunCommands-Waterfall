@@ -4,94 +4,68 @@ import net.md_5.bungee.api.plugin.Plugin;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 import org.openredstone.FunCommands;
 import org.openredstone.commands.GenericCommand;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
 
 public class DynamicCommandHandler {
+    private static final File commandFile =  new File(FunCommands.pluginFolder, "commands.json");
+    private static ArrayList<GenericCommand> commands = null;
 
-    private static List<GenericCommand> Commands = null;
+    public static void readCommands() throws Exception {
+        commands = new ArrayList<>();
 
-    public static List<String> CommandNames = null;
+        // TODO: move somewhere?
+        FunCommands.logger.info("Reading FunCommands from commands.json");
 
-    private static final File CommandFile =  new File(FunCommands.pluginFolder + File.separator + "Commands.json");
+        for (Object commandObj : readJSONCommands(commandFile)) {
+            if (!(commandObj instanceof JSONObject)) {
+                throw new Exception("Commands should be JSON objects");
+            }
+            JSONObject cmd = (JSONObject) commandObj;
 
-    public static void readCommands() throws IOException {
-        Commands = new ArrayList<>();
-        CommandNames = new ArrayList<>();
-
-
-        FunCommands.logger.info("Reading FunCommands from Commands.json!");
-
-        FileReader fileReader = null;
-
-        JSONParser parser = new JSONParser();
-
-        try {
-
-            fileReader = new FileReader(CommandFile);
-
-        }catch (FileNotFoundException e) {
-
-            FunCommands.logger.severe("Error opening Commands.json Do you have one? "+ e.toString());
-
-        }
-
-        JSONArray jsonObject = null;
-
-        try {
-
-            jsonObject = (JSONArray) parser.parse(fileReader);
-
-        } catch (Exception e) {
-
-             FunCommands.logger.warning("Can't read Commands.json. You sure its formated right?");
-
-        }
-
-        Iterator<JSONObject> iterator = jsonObject.iterator();
-
-        int  temp2 = 0;
-
-        while (iterator.hasNext()) {
-
-            JSONObject temp = iterator.next();
-
-            GenericCommand command = new GenericCommand((String) temp.get("Command"), "" /*"FunCommands."+(String) temp.get("Command")*/, (String) temp.get("Description"), (String) temp.get("Function"));
-
-            Commands.add(command);
-            CommandNames.add((String) temp.get("Command"));
-
-            temp2++;
-
-        }
-        FunCommands.logger.info(temp2 + " Commands loaded!");
-        try {
-            fileReader.close();
-        } catch (IOException e) {
-            FunCommands.logger.severe("Can't close Commands.json... That's not right!");
+            // TODO: these casts are unsafe
+            // and the whole thing is ugly
+            String name = (String) cmd.get("command");
+            commands.add(new GenericCommand(
+                    name,
+                    "FunCommands." + name,
+                    (String) cmd.get("description"),
+                    (String) cmd.getOrDefault("globalChat", null),
+                    (String) cmd.getOrDefault("localChat", null),
+                    (String) cmd.getOrDefault("run", null)
+            ));
         }
     }
 
-    public static void registerCommands(Plugin plugin){
+    private static JSONArray readJSONCommands(File file) throws Exception {
+        try (FileReader reader = new FileReader(file)) {
+            Object json = new JSONParser().parse(reader);
+            if (!(json instanceof JSONArray)) {
+                // TODO
+                throw new Exception("commands.json should contain an array of commands");
+            }
+            return (JSONArray) json;
+        } catch (ParseException e) {
+            // TODO
+            throw e;
+        }
+    }
 
-        for(GenericCommand command : Commands){
+    public static void registerCommands(Plugin plugin) {
+        for (GenericCommand command : commands) {
             plugin.getProxy().getPluginManager().registerCommand(plugin, command);
         }
 
     }
-    public static void unRegisterCommands(Plugin plugin){
 
-        for(GenericCommand command : Commands){
+    public static void unregisterCommands(Plugin plugin) {
+        for (GenericCommand command : commands) {
             plugin.getProxy().getPluginManager().unregisterCommand(command);
         }
-
     }
 }
